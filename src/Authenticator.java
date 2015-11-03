@@ -16,21 +16,26 @@ public class Authenticator {
 		} else {
 			System.out.println("Access denied!");
 		}**/
-		byte[] array = {'l', 'a', 'a', 'a', 'a', 'a', 'a', 'm'}; 
+		byte[] array = {'b', 'a', 'a', 'a', 'a', 'a', 'a', 'c'}; 
 		MessageDigest md = MessageDigest.getInstance("SHA-256");
 		EXIT:
 			for (int i=0; i<26; i++){
 				System.out.println(new String(array,"UTF-8"));
-				array[1]+=1;
+				array[1]++;
 				for (int i2=0; i2<26; i2++){
-					array[2]=+1;
+					//System.out.println(new String(array,"UTF-8"));
+					array[2]++;
 					for (int i3=0; i3<26; i3++){
-						array[3]+=1;
+						//System.out.println(new String(array,"UTF-8"));
+						array[3]++;
 						for (int i4=0; i4<26; i4++){
+							//System.out.println(new String(array,"UTF-8"));
 							array[4]++;
 							for (int i5=0; i5<26; i5++){
+								//System.out.println(new String(array,"UTF-8"));
 								array[5]++;
 								for (int i6=0; i6<26; i6++){
+									//System.out.println(new String(array,"UTF-8"));
 									array[6]++;
 									byte[] digest = md.digest(array);
 									String hex = new HexBinaryAdapter().marshal(digest);
@@ -52,7 +57,7 @@ public class Authenticator {
 			}
 
 		if (!flag)
-			System.out.println(new String(array,"UTF-8")+"nem jo");
+			System.out.println(new String(array,"UTF-8")+" nem jo");
 	}
 
 	public static boolean checkPassword(String password) {
